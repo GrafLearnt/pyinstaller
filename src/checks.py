@@ -11,12 +11,12 @@ upload_exe_with_name = env('upload_exe_with_name')
 
 """ Checks """
 # If required inputs missing -> ERROR
-if not spec:
-    set_annotation(
-        "Required input missing: 'spec'.",
-        'Input-Error',
-        'error'
-    )
+# if not spec:
+#     set_annotation(
+#         "Required input missing: 'spec'.",
+#         'Input-Error',
+#         'error'
+#     )
 
 # If passed inputs are not supported -> ERROR
 # supported_spec = (
