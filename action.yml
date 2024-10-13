@@ -105,7 +105,8 @@ runs:
           --clean \
           --noconfirm \
           --dist ${{ inputs.exe_path }} \
-          ${{ steps.mods.outputs.supported_options }}
+          ${{ steps.mods.outputs.supported_options }} \
+          "${{ inputs.spec }}"
         
         echo "✔️ Executable created successfully at _'${{ inputs.exe_path }}'_" >> $GITHUB_STEP_SUMMARY
         echo "  - Python version used: '${{ inputs.python_ver }}'" >> $GITHUB_STEP_SUMMARY
