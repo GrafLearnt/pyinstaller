@@ -47,6 +47,9 @@ inputs:
   compression_level:
     description: 'Level of compression for archive (between 0 and 9). 0 = No compression, 9 = Max compression.'
     default: 6
+  groups:
+    description: Poetry groups to install
+    default: main
 
 
 outputs:
@@ -95,7 +98,7 @@ runs:
         lfs: ${{ inputs.lfs }}
     
     - name: (Install) dependencies
-      run: python -m poetry install
+      run: python -m poetry install --only=${{ inputs.groups }}
       shell: bash
     
     - name: (Create) Executable
